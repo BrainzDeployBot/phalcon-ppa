@@ -1,3 +1,10 @@
+php-phalcon (2.0.13-ppa1~vivid) vivid; urgency=low
+
+  * Restored Phalcon\Text::camelize behavior #11767
+  * Used Zephir v0.9.2
+
+ --  Senno Kaasjager <senno.kaasjager@gmail.com>  Fri, 20 May 2016 14:23:00 +0100
+
 php-phalcon (2.0.12-ppa1~vivid) vivid; urgency=low
 
   * Fixed regression changes for Phalcon\Mvc\View\Engine\Volt::callMacro
