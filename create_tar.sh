@@ -8,6 +8,6 @@ fi
 
 cd ..
 
-tar czf php-phalcon_$VERSION.orig.tar.gz php-phalcon --exclude=.git --exclude=.gitignore --exclude=.gitmodules --exclude=debian
+tar -cz --exclude=.git --exclude=.gitignore --exclude=.gitmodules --exclude=debian -f php-phalcon_$VERSION.orig.tar.gz php-phalcon
 
 cd php-phalcon
