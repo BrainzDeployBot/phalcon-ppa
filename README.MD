@@ -2,10 +2,12 @@
 
 The repository contains several branches:
 
-* precise: Ubuntu 12.04 LTS
-* trusty: Ubuntu 14.04 LTS
-* vivid: Ubuntu 15.04
-* wily: Ubuntu 15.10
+| Branch  | Ubuntu Release | Phalcon Release | PHP version |
+| ------------- | ------------- | ------------- | ------------- |
+| [precise](https://github.com/phalcon/phalcon-ppa/tree/precise)  | Precise Pangolin 12.04 LTS  | Up to `2.0.9` | `5.3.x` |
+| [trusty](https://github.com/phalcon/phalcon-ppa/tree/precise)  | Trusty Tahr 14.04 LTS  | Up to `2.0.13` | `5.5.x` |
+| [vivid](https://github.com/phalcon/phalcon-ppa/tree/vivid)  | Vivid Vervet 15.04  | Up to `2.0.13` | `5.6.x` |
+| [wily](https://github.com/phalcon/phalcon-ppa/tree/wily)  | Wily Werewolf 15.10 | Up to `2.0.13` | `5.6.x` |
 
 ## Step 1: Generate gpg key and upload it
 
@@ -43,7 +45,7 @@ The repository contains several branches:
     * Finish the changelog by adding the actual changes that you can find in the official Phalcon `CHANGELOG.md`
 4.  Update the submodule of cphalcon by running: `git submodule update --init --recursive`
 5.  Commit the changes to this branch and repeat the process for all branches (you can use `git merge <current branch>` and then enter the correct os name by resolving the merge conflict).
-6.  Build the tar file for this release (`cd .. && tar czf php-phalcon_2.0.11.orig.tar.gz php-phalcon --exclude=.git --exclude=.gitmodules --exclude=debian  --exclude=.gitignore && cd php-phalcon`). Change the version to the correct version. The resulting tar must be one directory up from `php-phalcon`
+6.  Build the tar file for this release (`cd .. && tar -zc --exclude=.git --exclude=.gitmodules --exclude=debian --exclude=.gitignore -f php-phalcon_2.0.13.orig.tar.gz php-phalcon && cd php-phalcon`). Change the version to the correct version. The resulting tar must be one directory up from `php-phalcon`
 7.  Go back to the `php-phalcon` directory (`cd php-phalcon`). Enter `gpg --list-keys` and copy your public key part (`pub 2048R/<something>`).
 8.  Build the package by running: `debuild -S -sa -k<your pubkey>`
 9.  Now upload the change file to the ppa. Go one directory up (`cd ..`) and upload the changes file (`dput ppa:phalcon/stable php-phalcon_2.0.11-ppa1~trusty_source.changes`)
