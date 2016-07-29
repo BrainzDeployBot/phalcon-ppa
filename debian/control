@@ -1,7 +1,7 @@
 Source: php-phalcon
 Section: php
 Priority: optional
-Maintainer: Phalcon PHP Team <team@phalconphp.com>
+Maintainer: Phalcon Framework Team <team@phalconphp.com>
 XSBC-Original-Maintainer: Serghei Iakovlev <serghei@phalconphp.com>
 Build-Depends: debhelper (>= 9), php5-dev, libpcre3-dev
 Standards-Version: 3.9.5
