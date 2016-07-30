@@ -18,23 +18,23 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-BUILD=$(CURDIR)/debian/php5-phalcon
-PHP_EX=$(shell /usr/bin/php-config5 --extension-dir)
-PHP_APIVER=$(shell /usr/bin/php-config5 --phpapi)
+BUILD=$(CURDIR)/debian/php7.0-phalcon
+PHP_EX=$(shell /usr/bin/php-config7.0 --extension-dir)
+PHP_APIVER=$(shell /usr/bin/php-config7.0 --phpapi)
 
-PHALCON_DIR=cphalcon/build/php5/safe
+PHALCON_DIR=cphalcon/build/php7/safe
 CFLAGS+=-g3 -fvisibility=hidden -DPHALCON_RELEASE
 LDFLAGS+=-Wl,--as-needed -Wl,-O1 -Wl,-Bsymbolic-functions
 
-PHALCON_DIR=cphalcon/build/php5/safe
+PHALCON_DIR=cphalcon/build/php7/safe
 DEB_HOST_ARCH?=$(shell dpkg-architecture -qDEB_HOST_ARCH)
 
 ifeq ($(DEB_HOST_ARCH),$(filter $(DEB_HOST_ARCH),i386))
-	PHALCON_DIR=cphalcon/build/php5/32bits
+	PHALCON_DIR=cphalcon/build/php7/32bits
 endif
 
 ifeq ($(DEB_HOST_ARCH),$(filter $(DEB_HOST_ARCH),amd64))
-	PHALCON_DIR=cphalcon/build/php5/64bits
+	PHALCON_DIR=cphalcon/build/php7/64bits
 endif
 
 ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
@@ -65,8 +65,8 @@ override_dh_auto_install:
 	INSTALL_ROOT=$(BUILD) $(MAKE) -C $(PHALCON_DIR) install
 
 override_dh_strip:
-	dh_strip -s --dbg-package=php5-phalcon-dbg
+	dh_strip -s --dbg-package=php7.0-phalcon-dbg
 
 override_dh_gencontrol:
-	echo "php:Depends=phpapi-$(PHP_APIVER)" >> debian/php5-phalcon.substvars
+	echo "php:Depends=phpapi-$(PHP_APIVER)" >> debian/php7.0-phalcon.substvars
 	dh_gencontrol
