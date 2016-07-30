@@ -8,7 +8,7 @@ The repository contains several branches:
 | [trusty](https://github.com/phalcon/phalcon-ppa/tree/precise)  | Trusty Tahr 14.04 LTS  | Up to `3.0.0` | `5.5.x` |
 | [vivid](https://github.com/phalcon/phalcon-ppa/tree/vivid)  | Vivid Vervet 15.04  | Up to `3.0.0` | `5.6.x` |
 | [wily](https://github.com/phalcon/phalcon-ppa/tree/wily)  | Wily Werewolf 15.10 | Up to `3.0.0` | `5.6.x` |
-| [xenial](https://github.com/phalcon/phalcon-ppa/tree/xenial)  | Xenial Xerus 16.04 LTS | Up to `3.0.0` | `7.0.0` |
+| [xenial](https://github.com/phalcon/phalcon-ppa/tree/xenial)  | Xenial Xerus 16.04 LTS | Up to `3.0.0` | `7.0.x` |
 
 ## Step 1: Generate gpg key and upload it
 
